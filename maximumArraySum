@@ -1,0 +1,35 @@
+
+arr= [-2,0,5,-1,2]
+arr.sort()
+k=3
+i=0
+min_=999
+sum_=0
+while k>0:
+    #checking if there is negetive value
+    if arr[i]<0:
+        arr[i]=arr[i]*(-1)
+        k=k-1
+        i=i+1
+    else:
+      #if any positive value is encountered
+      #it will exit
+      #thus all elements are now positive
+      break
+    
+#since all elements in the array
+#so finding minimum    
+for i in range(len(arr)):
+  if arr[i]<min_:
+    min_=arr[i]
+    pos=i
+
+#the rest of the k is iterated
+while k>0:
+  arr[pos]=arr[pos]*(-1)
+  k=k-1
+
+for i in range(len(arr)):
+  sum_=sum_+arr[i]
+print(sum_)
+
